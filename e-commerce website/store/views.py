@@ -27,7 +27,17 @@ def cart(request):
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/cart.html', context)
 
+"""
+My Code Package
+----------------------
+this a python code for an E-commerce webapplication
+"""
 def checkout(request):
+	"""
+		:param name: request
+		:param type: str
+		:return: str
+	    """
 	data = cartData(request)
 	
 	cartItems = data['cartItems']
@@ -62,7 +72,17 @@ def updateItem(request):
 
 	return JsonResponse('Item was added', safe=False)
 
+"""
+	My Code Package
+	----------------------
+	this a python code for an E-commerce webapplication
+	"""
 def processOrder(request):
+	"""
+			:param name: request
+			:param type: str
+			:return: str
+		    """
 	transaction_id = datetime.datetime.now().timestamp()
 	data = json.loads(request.body)
 
