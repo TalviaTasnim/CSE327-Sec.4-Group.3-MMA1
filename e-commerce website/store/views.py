@@ -72,11 +72,6 @@ def updateItem(request):
 
 	return JsonResponse('Item was added', safe=False)
 
-"""
-	My Code Package
-	----------------------
-	this a python code for an E-commerce webapplication
-	"""
 def processOrder(request):
 	"""
 			:param name: request
