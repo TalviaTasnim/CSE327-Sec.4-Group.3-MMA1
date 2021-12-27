@@ -1,6 +1,6 @@
 from django import contrib
 from django.shortcuts import render,HttpResponse,redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import AbstractUser
 from django.views.generic import CreateView
 from django.http import HttpResponse
@@ -10,9 +10,11 @@ from .models import User,Customer, Seller
 
 # Create your views here.
 
-
 def main(request):
     return render(request, 'main.html')
+
+def home(request):
+    return render(request, 'home.html')
 
 def login(request):
     return render(request, 'login.html')
@@ -24,7 +26,7 @@ def welcome(request):
 
 def log(request):
     if request.user.is_authenticated:
-        return redirect('success')
+        return redirect('home')
     else:
           if request.method == 'POST':
               username =request.POST.get('customer_name')
@@ -64,6 +66,11 @@ def log2(request):
     context= {}
     return render(request, 'login.html', context)
 
+
+def log_out(request):
+    
+    logout(request)
+    return redirect('log')
 
 class CustomerSignUpView(CreateView):
     model = User

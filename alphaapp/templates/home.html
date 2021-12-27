@@ -1,0 +1,95 @@
+{% extends 'railapp/main.html' %}
+{% load static %}
+{% block content %}
+<html>
+<title>Homepage</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/6bfc56eb45.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/homebuy.css'%}">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<style>
+  .post{
+  background-color: #343b43;
+  color: rgba(209, 185, 50, 0.89);
+  display: block;
+  border-radius: 55px;
+  margin: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 60rem;
+  }
+.carousel {
+    position: relative;
+    width: 50rem;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+.row {
+  background-color:rgba(209, 185, 50, 0.89);
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    padding:0.5rem;
+    border-radius:3rem;
+}
+.mainrow{
+  display: inline-flex;
+  color: dimgray;
+}
+.welcome{
+  background-color: #343b43;
+  color: rgba(209, 185, 50, 0.89);
+  text-align: center;
+  display: block;
+  width: 32rem;
+  -webkit-border-radius: 55px 888px;
+  border-radius: 55px 888px;
+  margin: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+
+}
+.inner{
+  margin-top: 3rem;
+}
+textarea.form-control{
+  width:400px;
+  margin:auto;
+  margin-left: 5rem;
+}
+.btn {
+  color:white;
+  border: 1px solid; 
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 14.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  display: block;
+}
+</style>
+
+<body>
+
+{% if request.user.is_authenticated and user.is_guser == True %}
+<div class="welcome">
+  <i class="fas fa-user fa-2x" style="margin-right:3px;"></i>
+<h6>General User Portal</h6>  
+<h3> Welcome, {{ user.username }}</h3>
+</div>
+{% elif request.user.is_authenticated and user.is_trainmaster == True %}
+<div class="welcome">
+  <i class="fas fa-users-cog fa-2x" style="margin-right:3px;"></i>
+<h6>Train Master Portal</h6> 
+
+<h3> Welcome, {{ user.username }}</h3>
+</div>
+{% endif %}
+</body>
+{% endblock content %}
+</html>
