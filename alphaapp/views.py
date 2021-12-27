@@ -92,4 +92,10 @@ class SellerSignupVIew(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('main')
+
+def FAQ(request):
+    return render (request, 'faq.html')
+
+def Contact(request):
+    return render (request, 'contact.html')
    

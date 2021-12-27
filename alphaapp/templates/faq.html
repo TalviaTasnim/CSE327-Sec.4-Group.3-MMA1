@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="stylesheet" href="{% static 'css/faq.css'%}" />
+  </head>
+  <body>
+    <div class="faqs-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="questions-container">
+        <div class="content-container">
+          <div class="faq-header">
+            <h3>How do I purchase?</h3>
+            <span class="open active">+</span>
+            <span class="close">-</span>
+          </div>
+
+          <div class="content">
+            <p>
+              Go to our Navbar and click on features. Select your desire products and add to cart all of the products
+
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="faq-header">
+            <h3>Can i purchase more than one products</h3>
+            <span class="open active">+</span>
+            <span class="close">-</span>
+          </div>
+
+          <div class="content">
+            <p>
+              Yes you can only purchase more than one iteam from the same shop but you cant buy purchase multiple products from different shop.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="faq-header">
+            <h3>How to cancel orders</h3>
+            <span class="open active">+</span>
+            <span class="close">-</span>
+          </div>
+
+          <div class="content">
+            <p>
+              You can contact admin to cancel your order. Before  Cancelling make sure you read the terms and condition.
+            </p>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/faq.js'%}"></script>
+  </body>
+</html>
+{% endblock content %}
