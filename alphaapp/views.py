@@ -26,7 +26,7 @@ def welcome(request):
 
 def log(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('main')
     else:
           if request.method == 'POST':
               username =request.POST.get('customer_name')
@@ -36,7 +36,7 @@ def log(request):
 
               if user is not None and user.is_customer:
                   login(request, user)
-                  return redirect('success')
+                  return redirect('profile')
               elif user is not None and user.is_seller:
                   messages.info(request, 'This  is for customers only, You are a Seller')
               else:
@@ -65,6 +65,13 @@ def log2(request):
             
     context= {}
     return render(request, 'login.html', context)
+
+def UserProfile(request):
+    username_c=request.user.username
+    user_c=request.user
+    ccuser=Customer.objects.all()
+    context={'ccuser':ccuser}
+    return render (request, 'userprofile.html', context)
 
 
 def log_out(request):

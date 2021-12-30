@@ -1,4 +1,4 @@
-{% extends 'railapp/main.html' %}
+
 {% load static %}
 {% block content %}
 <html>
@@ -7,7 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/6bfc56eb45.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{% static 'css/homebuy.css'%}">
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
 <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 <style>
   .post{
@@ -75,6 +75,23 @@ textarea.form-control{
 </style>
 
 <body>
+
+
+  <div class="sticky-top">
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand" href="#"><img id="brand" src="{% static 'images/logo.jpg' %}" alt="logo"></a>
+      <ul class="mynavbar">
+      
+        <li class="nav-item"><a class="navlink" href="#" data-hover="About">Feature</a></li>
+        <li class="nav-item"><a class="navlink" href="{% url 'faq' %}" data-hover="FAQ">FAQ</a></li>
+        <li class="nav-item"><a class="navlink" href="{% url 'contact' %}" data-hover="Contact Us">Contact Us</a></li>
+        <li class="nav-item"><a class="navlink" href="{% url 'login' %}" data-hover="Login">Login</a></li>
+        <li class="nav-item"><a class="navlink" href="#" data-hover="Features">Profile</a></li>
+        <li class="nav-item"><a class="navlink" href="{% url 'logout' %}" data-hover="Log Out">Log Out</a></li>
+        <li class="nav-item "><a class="navlink" href="{% url 'signup' %}" data-hover="Register">Register</a></li>
+      </ul>   
+  </nav>
+  </div>
 
 {% if request.user.is_authenticated and user.is_guser == True %}
 <div class="welcome">

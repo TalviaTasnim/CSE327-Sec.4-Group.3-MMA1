@@ -54,13 +54,13 @@
   <nav class="navbar navbar-light bg-dark">
     <a class="navbar-brand" href="#"><img id="brand" src="{% static 'images/logo.jpg' %}" alt="logo"></a>
     <ul class="mynavbar">
-      <li class="nav-item "><a class="navlink" href="#" data-hover="Home">Home</a></li>
+      <li class="nav-item "><a class="navlink" href="{% url 'home' %}" data-hover="Home">Home</a></li>
       <li class="nav-item"><a class="navlink" href="#" data-hover="About">About</a></li>
       <li class="nav-item"><a class="navlink" href="{% url 'faq' %}" data-hover="FAQ">FAQ</a></li>
       <li class="nav-item"><a class="navlink" href="{% url 'contact' %}" data-hover="Contact Us">Contact Us</a></li>
       <li class="nav-item"><a class="navlink" href="{% url 'login' %}" data-hover="Login">Login</a></li>
-      <li class="nav-item"><a class="navlink" href="#" data-hover="Features">Profile</a></li>
-      <li class="nav-item"><a class="navlink" href="{% url 'logout' %}" data-hover="Log Out">Log Out</a></li>
+      <li class="nav-item"><a class="navlink" href="{% url 'user-profile'%}" data-hover="Userprofile">Profile</a></li>
+      <li class="nav-item"><a class="navlink" href="{% url 'logout' %}" data-hover="Lo g Out">Log Out</a></li>
       <li class="nav-item "><a class="navlink" href="{% url 'signup' %}" data-hover="Register">Register</a></li>
     </ul>   
 </nav>

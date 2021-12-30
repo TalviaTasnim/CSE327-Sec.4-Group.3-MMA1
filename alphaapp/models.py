@@ -8,6 +8,8 @@ class User(AbstractUser):
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    first_name = models.CharField(max_length=500)
+    last_name = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
 
@@ -16,6 +18,8 @@ class Customer(models.Model):
 
 class Seller(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    first_name = models.CharField(max_length=500)
+    last_name = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     licenseNumber = models.CharField(max_length=200)
