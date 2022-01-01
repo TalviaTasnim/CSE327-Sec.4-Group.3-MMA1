@@ -1,4 +1,5 @@
 import unittest
+from django.test import TestCase
 from store.views import checkout
 
 class TestCheckoutView(unittest.TestCase):
