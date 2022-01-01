@@ -27,11 +27,7 @@ def cart(request):
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/cart.html', context)
 
-"""
-My Code Package
-----------------------
-this a python code for an E-commerce webapplication
-"""
+
 def checkout(request):
 	"""
 		:param name: request
