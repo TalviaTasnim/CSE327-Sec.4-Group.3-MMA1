@@ -1,0 +1,115 @@
+from django import contrib
+from django.shortcuts import render,HttpResponse,redirect
+from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth.models import AbstractUser
+from django.views.generic import CreateView
+from django.http import HttpResponse
+from django.contrib import messages
+from .forms import CustomerSignupForm, SellerSignUpForm
+from .models import User,Customer, Seller
+
+# Create your views here.
+
+def main(request):
+    return render(request, 'main.html')
+
+def home(request):
+    return render(request, 'home.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def Signup(request):
+    return render(request, 'register.html')
+def welcome(request):
+    return render(request, 'success.html')
+
+def log(request):
+    if request.user.is_authenticated:
+        return redirect('main')
+    else:
+          if request.method == 'POST':
+              username =request.POST.get('customer_name')
+              password =request.POST.get('customer_password')
+             
+              user= authenticate(request, username=username, password=password)
+
+              if user is not None and user.is_customer:
+                  login(request, user)
+                  return redirect('profile')
+              elif user is not None and user.is_seller:
+                  messages.info(request, 'This  is for customers only, You are a Seller')
+              else:
+                 messages.info(request, 'Username or Password is incorrect')
+            
+    context= {}
+    return render(request, 'login.html', context)
+
+
+def log2(request):
+    if request.user.is_authenticated:
+        return redirect('success')
+    else:
+          if request.method == 'POST':
+              username =request.POST.get('seller_name')
+              password =request.POST.get('seller_password')
+              user= authenticate(request, username=username, password=password)
+
+              if user is not None and user.is_seller:
+                  login(request, user)
+                  return redirect('main')
+              elif user is not None and user.is_customer:
+                  messages.info(request, 'This  is for Sellers only, You are a Customer')
+              else:
+                 messages.info(request, 'Username or Password is incorrect')
+            
+    context= {}
+    return render(request, 'login.html', context)
+
+def UserProfile(request):
+    username_c=request.user.username
+    user_c=request.user
+    ccuser=Customer.objects.all()
+    context={'ccuser':ccuser}
+    return render (request, 'userprofile.html', context)
+
+
+def log_out(request):
+    
+    logout(request)
+    return redirect('log')
+
+class CustomerSignUpView(CreateView):
+    model = User
+    form_class = CustomerSignupForm
+    template_name = 'signup.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'customer'
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('main')
+
+class SellerSignupVIew(CreateView):
+    model = User
+    form_class = SellerSignUpForm
+    template_name = 'signup.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'seller'
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('main')
+
+def FAQ(request):
+    return render (request, 'faq.html')
+
+def Contact(request):
+    return render (request, 'contact.html')
+   
