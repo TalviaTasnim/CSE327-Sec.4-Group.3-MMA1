@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoginRegisterModule package &mdash; loginregister 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> loginregister
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">LoginRegisterModule package</a><ul>
+<li><a class="reference internal" href="#module-src.LoginRegisterModule">Module contents</a><ul>
+<li><a class="reference internal" href="#loginregistermodule">LoginRegisterModule</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">loginregister</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>LoginRegisterModule package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/LoginRegisterModule.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="loginregistermodule-package">
+<h1>LoginRegisterModule package<a class="headerlink" href="#loginregistermodule-package" title="Permalink to this headline"></a></h1>
+<section id="module-src.LoginRegisterModule">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.LoginRegisterModule" title="Permalink to this headline"></a></h2>
+<section id="loginregistermodule">
+<h3>LoginRegisterModule<a class="headerlink" href="#loginregistermodule" title="Permalink to this headline"></a></h3>
+<p>This is a module whcih has a function
+for customer and seller logn and registartion and viweing Details</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.Signup">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">Signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#Signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.Signup" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the registtartion page as a seller or customer .
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a signup page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.UserProfile">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">UserProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#UserProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.UserProfile" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the user prfile login.
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a search page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.cutomer_log">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">cutomer_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#cutomer_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.cutomer_log" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the login page.
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a search page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.home">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.home" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.log_out">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">log_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#log_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.log_out" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to logout page.
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns the user in home  page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.login">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.login" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the login page as a seller or customer .
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a login page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.main">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.main" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the main page.
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns the main page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.seller_log2">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">seller_log2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#seller_log2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.seller_log2" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view the login page.
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a search page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.LoginRegisterModule.welcome">
+<span class="sig-prename descclassname"><span class="pre">src.LoginRegisterModule.</span></span><span class="sig-name descname"><span class="pre">welcome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/LoginRegisterModule.html#welcome"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.LoginRegisterModule.welcome" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to view succesfull login and registartion .
+:param request: it’s a HttpResponse from user.
+:type request: HttpResponse.
+:return: this method returns a welcome page which is a HTML page.
+:rtype: HttpResponse.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, faisal.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
